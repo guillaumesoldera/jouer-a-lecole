@@ -2,11 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+
 import reportWebVitals from './reportWebVitals';
+import { Expenses } from './components/expenses';
+import { Invoices } from './components/invoices';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="expenses" element={<Expenses />} />
+        <Route path="invoices" element={<Invoices />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
