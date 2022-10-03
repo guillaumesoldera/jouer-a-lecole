@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import {
   BrowserRouter,
   Routes,
@@ -9,16 +8,18 @@ import {
 } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
-import { Expenses } from './components/expenses';
-import { Invoices } from './components/invoices';
+import { Skeleton } from './components/skeleton';
+import { Game } from './components/game';
+import { Home } from './components/home';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="expenses" element={<Expenses />} />
-        <Route path="invoices" element={<Invoices />} />
+        <Route path="/" element={<Skeleton />}>
+          <Route path="" element={<Home />}></Route>
+          <Route path="games/:gameId" element={<Game />}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

@@ -1,0 +1,13 @@
+.pill {
+    background-color: #5BAAD9;
+    border: 1px solid #0568A3;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: 1.5em;
+  }

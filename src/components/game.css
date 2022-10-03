@@ -1,0 +1,44 @@
+.game {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-description h1 {
+    display: none;
+}
+
+.game-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-mobile {
+    text-align: center;
+    font-size: 3.5em;
+}
+
+.game-domains {
+    margin-top: 25px;
+}
+
+@media (min-width: 640px) {
+    .game-content {
+        display: flex;
+        flex-direction: row;
+    }
+    .title-mobile {
+        display: none;
+    }
+    .game-image {
+        width: 30%;
+    }
+    .game-description {
+        padding-left: 30px;
+        padding-top: 0;
+    }
+    .game-description h1 {
+        font-size: 3.5em;
+        display: block;
+        margin: 10px 0;
+    }
+}

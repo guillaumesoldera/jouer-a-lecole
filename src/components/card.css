@@ -1,0 +1,52 @@
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #3396D1;
+    display: flex;
+    flex-direction: row;
+}
+  
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+/* Add some padding inside the card container */
+.container {
+    margin-left: 20px;
+}
+
+.card img {
+    width: 35%;
+}
+
+.card .pills {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    align-items: center;
+}
+.card .pill {
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
+@media (min-width: 640px) {
+    .card {
+        flex-direction: column;
+    }
+    .card img {
+        height: 280px;
+        width: 100%;
+        object-fit: contain;
+    }
+    .container {
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

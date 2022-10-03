@@ -1,0 +1,47 @@
+[
+    {
+        "slug": "times-up-family",
+        "id": "1111",
+        "title": "Time's up family",
+        "image": "/images/times-up-family.png",
+        "description": "",
+        "manual": "",
+        "domains": ["langage"]
+    },
+    {
+        "slug": "cyrano",
+        "id": "2222",
+        "title": "Cyrano",
+        "image": "/images/cyrano.jpg",
+        "description": "",
+        "manual": "",
+        "domains": ["ecriture-et-production-d-ecrit"]
+    },
+    {
+        "slug": "lucky-numbers",
+        "id": "3333",
+        "title": "Lucky numbers",
+        "image": "/images/lucky-numbers.png",
+        "description": "",
+        "manual": "",
+        "domains": ["nombres-et-calculs"]
+    },
+    {
+        "slug": "shut-the-box",
+        "id": "4444",
+        "title": "Shut the box",
+        "image": "/images/shut-the-box.png",
+        "description": "",
+        "manual": "",
+        "domains": ["nombres-et-calculs"]
+    },
+    {
+        "slug": "dive",
+        "id": "5555",
+        "title": "Dive",
+        "image": "/images/dive.png",
+        "description": "",
+        "manual": "",
+        "domains": ["espace-et-geometrie"]
+    }
+]

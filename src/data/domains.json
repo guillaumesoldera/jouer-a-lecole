@@ -1,0 +1,114 @@
+[
+    {
+        "id": "francais",
+        "label": "Français"
+    },
+    {
+        "id": "langage",
+        "label": "Langage",
+        "parent": "francais"
+    },
+    {
+        "id": "lecture-et-comprehension-de-l-ecrit",
+        "label": "Lecture et compréhension de l’écrit",
+        "parent": "francais"
+    },
+    {
+        "id": "ecriture-et-production-d-ecrit",
+        "label": "Ecriture et production d’écrit",
+        "parent": "francais"
+    },
+    {
+        "id": "etude-de-la-langue",
+        "label": "Etude de la langue",
+        "parent": "francais"
+    },
+    {
+        "id": "mathematiques",
+        "label": "Mathématiques"
+    },
+    {
+        "id": "nombres-et-calculs",
+        "label": "Nombres et calculs",
+        "parent": "mathematiques"
+    },
+    {
+        "id": "grandeurs-et-mesures",
+        "label": "Grandeurs et mesures",
+        "parent": "mathematiques"
+    },
+    {
+        "id": "espace-et-geometrie",
+        "label": "Espace et géométrie",
+        "parent": "mathematiques"
+    },
+    {
+        "id": "programmation",
+        "label": "Programmation",
+        "parent": "mathematiques"
+    },
+    {
+        "id": "education-physique-et-sportive",
+        "label": "Education Physique et Sportive"
+    },
+    {
+        "id": "adresse",
+        "label": "Adresse",
+        "parent": "education-physique-et-sportive"
+    },
+    {
+        "id": "motricite",
+        "label": "Motricité",
+        "parent": "education-physique-et-sportive"
+    },
+    {
+        "id": "langues-vivantes",
+        "label": "Langues vivantes"
+    },
+    {
+        "id": "enseignments-artistisques",
+        "label": "Enseignements Artistiques"
+    },
+    {
+        "id": "arts-plastiques",
+        "label": "Arts plastiques",
+        "parent": "enseignments-artistisques"
+    },
+    {
+        "id": "education-musicale",
+        "label": "Education musicale",
+        "parent": "enseignments-artistisques"
+    },
+    {
+        "id": "questionner-le-monde",
+        "label": "Questionner le monde"
+    },
+    {
+        "id": "questionner-le-temps-et-l-espace",
+        "label": "Questionner le temps et l'espace"
+    },
+    {
+        "id": "reperage",
+        "label": "Repérage",
+        "parent": "questionner-le-temps-et-l-espace"
+    },
+    {
+        "id": "competences-transversales",
+        "label": "Compétences transversales"
+    },
+    {
+        "id": "memoire",
+        "label": "Mémoire",
+        "parent": "competences-transversales"
+    },
+    {
+        "id": "concentration-emotions",
+        "label": "Concentration - émotions",
+        "parent": "competences-transversales"
+    },
+    {
+        "id": "logique-deduction",
+        "label": "Logique - déduction",
+        "parent": "competences-transversales"
+    }
+]
