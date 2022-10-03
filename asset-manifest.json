@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/jouer-a-lecole/static/css/main.073c9b0a.css",
-    "main.js": "/jouer-a-lecole/static/js/main.bb437982.js",
+    "main.css": "/jouer-a-lecole/static/css/main.c1920e32.css",
+    "main.js": "/jouer-a-lecole/static/js/main.9360fad3.js",
     "static/js/787.2fda42ed.chunk.js": "/jouer-a-lecole/static/js/787.2fda42ed.chunk.js",
+    "static/media/duotone-light.png": "/jouer-a-lecole/static/media/duotone-light.726b5c7b8c3b41c46d83.png",
     "static/media/logo.svg": "/jouer-a-lecole/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/jouer-a-lecole/index.html",
-    "main.073c9b0a.css.map": "/jouer-a-lecole/static/css/main.073c9b0a.css.map",
-    "main.bb437982.js.map": "/jouer-a-lecole/static/js/main.bb437982.js.map",
+    "main.c1920e32.css.map": "/jouer-a-lecole/static/css/main.c1920e32.css.map",
+    "main.9360fad3.js.map": "/jouer-a-lecole/static/js/main.9360fad3.js.map",
     "787.2fda42ed.chunk.js.map": "/jouer-a-lecole/static/js/787.2fda42ed.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.bb437982.js"
+    "static/css/main.c1920e32.css",
+    "static/js/main.9360fad3.js"
   ]
 }
