@@ -21,6 +21,7 @@
 
 .card img {
     width: 35%;
+    object-fit: contain;
 }
 
 .card .pills {
