@@ -20,7 +20,7 @@ export const Game = (props) => {
                     <div className='game-domains'>
                         {richedDomains.map(domain => {
                             return (
-                                <Link key={domain.id} to={`/?domain=${domain.id}`}>
+                                <Link key={domain.id} to={`/?domain=${domain.parent ? domain.parent : domain.id}${domain.parent ? `&subdomain=${domain.id}` : ''}`}>
                                     <Pill label={domain.label}/>
                                 </Link>
                             )
