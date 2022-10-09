@@ -26,9 +26,7 @@ fs.readdir(directoryPath, function (err, files) {
     //listing all files using forEach
     files.forEach(function (file) {
         // Do whatever you want to do with the file
-        console.log(file)
         const [slug, ext] = file.split('\.')
-        console.log(slug, ext)
         if (images[slug]) {
             images[slug][ext] = file
         } else {
@@ -46,6 +44,7 @@ fs.readdir(directoryPath, function (err, files) {
                 slug,
                 id: id+1,
                 image: `/images/${image}`,
+                thumbnail: `/images/${slug}-thumb.webp`,
                 description: "",
                 manual: "",
             }

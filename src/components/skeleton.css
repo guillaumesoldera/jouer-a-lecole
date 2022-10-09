@@ -43,7 +43,7 @@ main::before {
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url('../images/duotone-light.png');
+    background-image: url('../images/duotone-light.webp');
     opacity: 0.55;
 }
 

@@ -23,6 +23,7 @@ export const Home = () => {
                 <div className='choices-container'>
                     <Choices choices={parentDomains} selected={selectedDomain} onSelect={(choiceId) => {
                         setSelectedDomain(choiceId);
+                        setSelectedSubdomain(undefined)
                         setSearchParams({'domain': choiceId})
                     }} />
                     {subdomains && <Choices choices={subdomains} selected={selectedSubdomain} onSelect={(choiceId) => {

@@ -37,6 +37,7 @@
 
 .card img {
     width: 35%;
+    max-height: 170px;
     object-fit: contain;
 }
 
