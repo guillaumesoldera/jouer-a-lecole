@@ -1,0 +1,21 @@
+.choices-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.choices-container > .choices:first-child {
+    margin-bottom: 10px;
+}
+
+@media (min-width: 640px) {
+    .choices-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .choices-container > .choices:first-child {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+}

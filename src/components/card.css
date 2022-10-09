@@ -7,11 +7,27 @@
     background-color: #3396D1;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
   
 /* On mouse-over, add a deeper shadow */
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card .identifier {
+    position: absolute;
+    width: 80px;
+    height: 28px;
+    border-radius: 3px;
+    font-size: 21px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 3px;
+    right: 3px;
 }
   
 /* Add some padding inside the card container */
@@ -39,8 +55,11 @@
     .card {
         flex-direction: column;
     }
+    .container h2 {
+        text-align: center;
+    }
     .card img {
-        height: 280px;
+        height: 180px;
         width: 100%;
         object-fit: contain;
     }

@@ -2,8 +2,8 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { games, domains } from '../data/data';
 import './game.css'
+import { ImageWithFallback } from './image';
 import { Pill } from './pill';
-
 
 export const Game = (props) => {
     const params = useParams();
@@ -14,7 +14,7 @@ export const Game = (props) => {
         <div className='game'>
             <div className='game-content'>
                 <h1 className='title-mobile'>{title}</h1>
-                <img className='game-image' src={process.env.PUBLIC_URL + image} alt={title}/>
+                <ImageWithFallback className='game-image' src={process.env.PUBLIC_URL + image} alt={title}/>
                 <div className='game-description'>
                     <h1>{title}</h1>
                     <div className='game-domains'>
