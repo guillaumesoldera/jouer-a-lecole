@@ -13,6 +13,7 @@ export const ImageWithFallback = ({ fallback = noImage, src, className, ...props
                 {...props}
                 onLoad={() => setIsLoaded(true)}
                 className={isLoaded ? className : 'hide'}
+                loading="lazy"
             />
             <img
                 src={noImage}
