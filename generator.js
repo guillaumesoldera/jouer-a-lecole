@@ -17,6 +17,15 @@ const slugify = (value, separator = "-") => {
 };
 
 const images = {}
+const allIds = []
+let currentId = 1;
+function nextAvailableId() {
+    while (allIds.includes(currentId)) {
+        currentId++;
+    }
+    return currentId;
+}
+
 //passsing directoryPath and callback function
 fs.readdir(directoryPath, function (err, files) {
     //handling error
@@ -35,23 +44,38 @@ fs.readdir(directoryPath, function (err, files) {
             }
         }
         
-        const games = gamesRaw.map((game, id) => {
-            const slug = slugify(game.title);
-            const imagesForSlug = images[slug] || {png: `${slug}.png`}
-            const image = imagesForSlug.webp || imagesForSlug.png || imagesForSlug.jpg || imagesForSlug.jpeg
-            return {
-                ...game,
-                slug,
-                id: id+1,
-                image: `/images/${image}`,
-                thumbnail: `/images/${slug}-thumb.webp`,
-                description: "",
-                manual: "",
-            }
-        })
-        
-        fs.writeFileSync('./src/data/games-generated.json', JSON.stringify(games))
     });
+    gamesRaw.forEach(game => {
+        if (game.id) {
+            if (allIds.includes(game.id)) {
+                console.error(`ID ${game.id} en doublon !`);
+                return;
+            } else {
+                allIds.push(game.id);
+            }
+        }
+    })
+    const games = gamesRaw.map((game, idx) => {
+        let id = game.id;
+        if (id === undefined) {
+            id = nextAvailableId();
+            allIds.push(id);
+        }
+        const slug = slugify(game.title);
+        const imagesForSlug = images[slug] || {png: `${slug}.png`}
+        const image = imagesForSlug.webp || imagesForSlug.png || imagesForSlug.jpg || imagesForSlug.jpeg
+        return {
+            ...game,
+            slug,
+            id,
+            image: `/images/${image}`,
+            thumbnail: `/images/${slug}-thumb.webp`,
+            description: "",
+            manual: "",
+        }
+    })
+    
+    fs.writeFileSync('./src/data/games-generated.json', JSON.stringify(games))
 });
 
 

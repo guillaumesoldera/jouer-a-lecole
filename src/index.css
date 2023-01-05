@@ -19,4 +19,4 @@ code {
     monospace;
 }
 
-.hide { display: none;}
+.hide { height: 0 !important;}

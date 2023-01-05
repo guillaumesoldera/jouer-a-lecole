@@ -15,21 +15,35 @@ fs.readdir(directoryPath, function (err, files) {
     //listing all files using forEach
     files.forEach(function (file) {
         // Do whatever you want to do with the file
-        const [slug, ext] = file.split('\.')
-        if (ext !== 'webp') {
-            im.convert([`public/images/${file}`, '-geometry', 'x300', '-quality', 50, '-define', 'webp:lossless=true', `public/images/${slug}.webp`], function(err, stdout, stderr){
-                if (err) throw err;
-            })
-            im.convert([`public/images/${file}`, '-geometry', 'x170', '-quality', 50, '-define', 'webp:lossless=true', `public/images/${slug}-thumb.webp`], function(err, stdout, stderr){
-                if (err) throw err;
-            })
-        } else {
-            im.convert([`public/images/${file}`, '-geometry', 'x300', `public/images/${slug}.webp`], function(err, stdout, stderr){
-                if (err) throw err;
-            })
-            im.convert([`public/images/${file}`, '-geometry', 'x170', `public/images/${slug}-thumb.webp`], function(err, stdout, stderr){
-                if (err) throw err;
-            })
+        if (file !== '.DS_Store') {
+            const [slug, ext] = file.split('\.')
+            if (!slug.endsWith('-thumb')) {
+                if (ext !== 'webp') {
+                    if (fs.existsSync(`${directoryPath}/${slug}.webp`) && fs.existsSync(`${directoryPath}/${slug}-thumb.webp`)) {
+                        console.log('preview already generated for ' + file);
+                    } else {
+                        console.log('generate preview for ' + file);
+                        im.convert([`public/images/${file}`, '-geometry', 'x300', '-quality', 50, '-define', 'webp:lossless=true', `public/images/${slug}.webp`], function(err, stdout, stderr){
+                            if (err) throw err;
+                        })
+                        im.convert([`public/images/${file}`, '-geometry', 'x170', '-quality', 50, '-define', 'webp:lossless=true', `public/images/${slug}-thumb.webp`], function(err, stdout, stderr){
+                            if (err) throw err;
+                        })
+                    }
+                } else {
+                    if (fs.existsSync(`${directoryPath}/${slug}-thumb.webp`)) {
+                        console.log('preview already generated for ' + file);
+                    } else {
+                        console.log('generate preview for ' + file);
+                        im.convert([`public/images/${file}`, '-geometry', 'x300', `public/images/${slug}.webp`], function(err, stdout, stderr){
+                            if (err) throw err;
+                        })
+                        im.convert([`public/images/${file}`, '-geometry', 'x170', `public/images/${slug}-thumb.webp`], function(err, stdout, stderr){
+                            if (err) throw err;
+                        })
+                    }
+                }
+            }
         }
         
         //im.resize({
