@@ -26,6 +26,7 @@ header h1 {
 .App-logo {
     height: 100%;
     pointer-events: none;
+    max-width: 70px;
 }
 
 main {

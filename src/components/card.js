@@ -2,9 +2,10 @@ import { domains } from '../data/data'
 import './card.css'
 import { ImageWithFallback } from './image'
 import { Pill } from './pill'
+import children from './children-solid.svg'
 
 
-export const Card = ({title, thumbnail, domains: gameDomains, id}) => {
+export const Card = ({title, thumbnail, domains: gameDomains, id, age}) => {
     const richedDomains = gameDomains.map(gd => domains.find(d => gd === d.id))
     //console.log({gameDomains}, {richedDomains})
     return (
@@ -20,6 +21,7 @@ export const Card = ({title, thumbnail, domains: gameDomains, id}) => {
                     }
                 </div>
             </div>
+            {age && <label className='age'><img src={children}></img><span>À partir de {age} ans</span></label>}
         </div>
     )
 }

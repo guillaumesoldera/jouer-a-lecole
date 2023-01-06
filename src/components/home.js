@@ -15,6 +15,8 @@ export const Home = () => {
     if (selectedDomain && subdomains) {
         const ids = selectedSubdomain ? [selectedSubdomain] : [selectedDomain, ...subdomains.map(e => e.id)]
         filteredGames = games.filter(game => intersection(game.domains, ids).length > 0)
+    } else if (selectedDomain) {
+        filteredGames = games.filter(game => intersection(game.domains, [selectedDomain]).length > 0)
     }
     filteredGames = filteredGames.sort((a, b) => a.title.localeCompare(b.title))
     return (

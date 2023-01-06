@@ -24,11 +24,29 @@
     font-weight: 600;
     background: rgba(255, 255, 255, 0.75);
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
     top: 3px;
     right: 3px;
 }
+
+.card .age {
+    position: absolute;
+    font-weight: 400;
+    font-size: 14px;
+    left: 10px;
+    bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card .age img {
+    height: 16px;
+    width: auto;
+    margin-right: 5px;
+}
+
   
 /* Add some padding inside the card container */
 .container {
@@ -41,6 +59,10 @@
     object-fit: contain;
 }
 
+img.hide {
+    width: 0 !important;
+}
+
 .card .pills {
     display: flex;
     flex-wrap: wrap;
@@ -51,6 +73,16 @@
     font-size: 1em;
     padding: 5px 10px;
 }
+
+.card .container {
+    width: 100%;
+}
+
+.card .container h2 {
+    margin-top: 25px;
+    text-align: center;
+}
+
 
 @media (min-width: 640px) {
     .card {
