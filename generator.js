@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 //joining path of directory 
 const directoryPath = path.join(__dirname, 'public/images');
+const directoryManuelsPath = path.join(__dirname, 'public/manuels');
 
 const slugify = (value, separator = "-") => {
     return value
@@ -17,9 +18,11 @@ const slugify = (value, separator = "-") => {
 };
 
 const images = {}
+const manuals = {}
 const allIds = []
 let currentId = 1;
 function nextAvailableId() {
+    console.log("call nextAvailableId")
     while (allIds.includes(currentId)) {
         currentId++;
     }
@@ -45,37 +48,47 @@ fs.readdir(directoryPath, function (err, files) {
         }
         
     });
-    gamesRaw.forEach(game => {
-        if (game.id) {
-            if (allIds.includes(game.id)) {
-                console.error(`ID ${game.id} en doublon !`);
-                return;
-            } else {
-                allIds.push(game.id);
+    fs.readdir(directoryManuelsPath, function (err, manuels) {
+
+        manuels.forEach(manuel => {
+            const [slug, ext] = manuel.split('\.')
+            manuals[slug] = manuel
+        })
+
+        gamesRaw.forEach(game => {
+            if (game.id) {
+                if (allIds.includes(game.id)) {
+                    console.error(`ID ${game.id} en doublon !`);
+                    return;
+                } else {
+                    allIds.push(game.id);
+                }
             }
-        }
-    })
-    const games = gamesRaw.map((game, idx) => {
-        let id = game.id;
-        if (id === undefined) {
-            id = nextAvailableId();
-            allIds.push(id);
-        }
-        const slug = slugify(game.title);
-        const imagesForSlug = images[slug] || {png: `${slug}.png`}
-        const image = imagesForSlug.webp || imagesForSlug.png || imagesForSlug.jpg || imagesForSlug.jpeg
-        return {
-            ...game,
-            slug,
-            id,
-            image: `/images/${image}`,
-            thumbnail: `/images/${slug}-thumb.webp`,
-            description: "",
-            manual: "",
-        }
-    })
-    
-    fs.writeFileSync('./src/data/games-generated.json', JSON.stringify(games))
+        })
+        const games = gamesRaw.map((game, idx) => {
+            let id = game.id;
+            if (id === undefined) {
+                id = nextAvailableId();
+                allIds.push(id);
+            }
+            const slug = game.slug || slugify(game.title);
+            const imagesForSlug = images[slug] || {png: `${slug}.png`}
+            const image = imagesForSlug.webp || imagesForSlug.png || imagesForSlug.jpg || imagesForSlug.jpeg
+            const manual = manuals[slug]
+            const description = game.description || ''
+            return {
+                ...game,
+                slug,
+                id,
+                image: `/images/${image}`,
+                thumbnail: `/images/${slug}-thumb.webp`,
+                description,
+                manual : manual ? `/manuels/${manual}` : undefined,
+            }
+        })
+        
+        fs.writeFileSync('./src/data/games-generated.json', JSON.stringify(games))
+    });
 });
 
 

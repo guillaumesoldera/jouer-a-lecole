@@ -3,7 +3,8 @@
     flex-direction: column;
 }
 
-.game-description h1 {
+
+.game-details h1 {
     display: none;
 }
 
@@ -18,10 +19,49 @@
 }
 
 .game-domains {
-    margin-top: 25px;
+    margin: 25px 0;
+}
+
+.game-details .age {
+    font-weight: 400;
+}
+
+.game-details .notice {
+    color: #000;
+}
+
+.game-details .age, .game-details .notice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.game-details .age img, .game-details .notice img {
+    height: 21px;
+    width: auto;
+    margin-right: 5px;
+}
+
+.game-description {
+    font-size: 24px;
+}
+
+.game-infos {
+    font-size: 21px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width: 920px) {
 }
 
 @media (min-width: 640px) {
+    .game-infos { 
+        flex-direction: column;
+    }
+    .notice {
+        margin-top: 12px;
+    }
     .game-content {
         display: flex;
         flex-direction: row;
@@ -32,11 +72,12 @@
     .game-image {
         width: 30%;
     }
-    .game-description {
+    .game-details {
         padding-left: 30px;
         padding-top: 0;
+        width: 70%;
     }
-    .game-description h1 {
+    .game-details h1 {
         font-size: 3.5em;
         display: block;
         margin: 10px 0;
