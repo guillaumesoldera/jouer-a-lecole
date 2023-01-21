@@ -1,0 +1,9 @@
+.with-description {
+    display: flex;
+    align-items: center;
+}
+
+.with-description input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+}

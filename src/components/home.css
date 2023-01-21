@@ -1,4 +1,15 @@
+.filters {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .choices-container {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     padding-bottom: 30px;
@@ -6,6 +17,10 @@
 
 .choices-container > .choices:first-child {
     margin-bottom: 10px;
+}
+
+.with-description {
+    margin-top: 8px;
 }
 
 @media (min-width: 640px) {
@@ -18,4 +33,19 @@
         margin-right: 20px;
         margin-bottom: 0;
     }
+    .search-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .search {
+        width: 65%;
+        margin-right: 20px;
+    }
+
+    .with-description { 
+        margin-top: 0;
+    }
+    
 }
