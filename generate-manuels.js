@@ -25,21 +25,25 @@ fs.readdir(directoryPath, function (err, files) {
             const id = file.split(' ')[0];
             const outputFileName = gamesById[id];
             if (outputFileName === undefined) {
-                console.err('No slug found for ' + file);
+                console.error('No slug found for ' + file);
             } else {
-                const inputfileName = `input-manuels/${file.replace("&", "\\&").replace("'", "\\'").replace(/ /g, "\\ ")}`;
-                const commandLine = `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=public/manuels/${outputFileName}.pdf ${inputfileName}`
-                exec(commandLine, (error, stdout, stderr) => {
-                    if (error) {
-                        console.log(`error: ${error.message}`);
-                        return;
-                    }
-                    if (stderr) {
-                        console.log(`stderr: ${stderr}`);
-                        return;
-                    }
-                    console.log(`pdf generated for ${outputFileName}`);
-                });
+                if (fs.existsSync(`public/manuels/${outputFileName}.pdf`)) {
+                    console.log(`pdf already generated for ${outputFileName}`);
+                } else {
+                    const inputfileName = `input-manuels/${file.replace("&", "\\&").replace("'", "\\'").replace(/ /g, "\\ ")}`;
+                    const commandLine = `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=public/manuels/${outputFileName}.pdf ${inputfileName}`
+                    exec(commandLine, (error, stdout, stderr) => {
+                        if (error) {
+                            console.log(`error: ${error.message}`);
+                            return;
+                        }
+                        if (stderr) {
+                            console.log(`stderr: ${stderr}`);
+                            return;
+                        }
+                        console.log(`pdf generated for ${outputFileName}`);
+                    });
+                }
             }
         }
         
