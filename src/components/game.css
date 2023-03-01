@@ -52,10 +52,6 @@
     justify-content: space-between;
 }
 
-.game-content picture {
-    text-align: center;
-}
-
 @media (min-width: 920px) {
 }
 
@@ -72,6 +68,9 @@
     }
     .title-mobile {
         display: none;
+    }
+    .game-image {
+        width: 30%;
     }
     .game-details {
         padding-left: 30px;
