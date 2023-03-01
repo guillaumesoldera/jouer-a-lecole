@@ -52,6 +52,14 @@
     justify-content: space-between;
 }
 
+picture.game-image {
+    width: 100%;
+}
+
+picture.game-image img {
+    width: 100%;
+}
+
 @media (min-width: 920px) {
 }
 
@@ -72,6 +80,13 @@
     .game-image {
         width: 30%;
     }
+    picture.game-image {
+        width: 30%;
+    }
+    .cards picture.game-image {
+        width: 100%;
+    }
+    
     .game-details {
         padding-left: 30px;
         padding-top: 0;
